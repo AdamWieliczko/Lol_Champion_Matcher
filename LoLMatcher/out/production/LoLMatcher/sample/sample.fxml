@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <GridPane prefHeight="250.0" prefWidth="525.0" style="-fx-background-color: AABBCC;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="470.0" minHeight="10.0" prefHeight="294.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="startButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#startButtonClicked" prefHeight="60.0" prefWidth="90.0" text="START" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" top="180.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField id="TextField3" fx:id="TextField3" promptText="Enter 3 champion" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" right="400.0" top="70.0" />
+               </GridPane.margin></TextField>
+            <TextField id="TextField2" fx:id="TextField2" promptText="Enter 2 champion" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" right="400.0" top="40.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField id="TextField1" fx:id="TextField1" promptText="Enter 1 champion" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" right="400.0" top="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField id="TextField4" fx:id="TextField4" promptText="Enter 4 champion" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" right="400.0" top="100.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField id="TextField5" fx:id="TextField5" promptText="Enter 5 champion" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" right="400.0" top="130.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextArea id="textArea" fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets right="100.0" top="50.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Button fx:id="AddBans" mnemonicParsing="false" onAction="#AddBansClicked" text="Add Bans">
+               <GridPane.margin>
+                  <Insets left="130.0" top="170.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="BanField1" promptText="Enter 1 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="BanField2" promptText="Enter 2 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="40.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="BanField3" promptText="Enter 3 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="70.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="BanField4" promptText="Enter 4 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="100.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="BanField5" promptText="Enter 5 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="130.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="BanField6" promptText="Enter 6 ban" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="140.0" right="280.0" top="160.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
