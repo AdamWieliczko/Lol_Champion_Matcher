@@ -1,11 +1,10 @@
 package sample;
 
-//JEDNA FUNKCJONALNOSC, PRZECHOWYWANIE DANYCH O BOHATERZE
 public class Champion {
 
      private String name;
      private byte[] attribute;
-    //KONSTRUKTOR
+
     public Champion(String name, byte[] attribute) {
         this.attribute = new byte[12];
         this.name = name;

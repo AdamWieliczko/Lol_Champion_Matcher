@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 
 import java.sql.*;
 
-//JEDNA FUNKCJONALNOSC, OBSLUGA KONTROLEK GRAFICZNYCH
 public class Controller {
     @FXML
     private TextField TextField1;
@@ -71,12 +70,7 @@ public class Controller {
 
     }
 
-    public void startButtonClicked(ActionEvent actionEvent) {
-
-        String[] hero = new String[6];
-        String[] banList = new String[6];
-        String[] results = new String[3];
-        //POBIERANIE WARTOSCI Z TEXTBOXOW
+    public void insertValuesToArrays(String[] hero, String[] banList) {
         hero[0] = TextField1.getText();
         hero[1] = TextField2.getText();
         hero[2] = TextField3.getText();
@@ -89,16 +83,21 @@ public class Controller {
         banList[3] = BanField4.getText();
         banList[4] = BanField5.getText();
         banList[5] = BanField6.getText();
+    }
 
+    public void startButtonClicked(ActionEvent actionEvent) {
+
+        String[] hero = new String[6];
+        String[] banList = new String[6];
+        String[] results = new String[3];
+
+        insertValuesToArrays(hero, banList);
 
         byte[] att = new byte[12];
         Champion[] champs = new Champion[5];
-        //POLACZENIE Z BAZA DANYCH "Champions"
-        try {
+        try { //connection with "Champions" database
             Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost:1433; databaseName=Champions; integratedSecurity=true;");
-            //SPRAWDZAMY, CZY INPUT POPRAWNY - JESLI TAK, POBIERAMY DANE PODANYCH BOHATEROW Z BAZY DANYCH
             if (Main.inputVerifier(connection,textArea, hero)) {
-
                 for(int i = 0; i < 6; i++)
                 {
                     if(banList[i].contains("'"))
@@ -106,7 +105,6 @@ public class Controller {
                         banList[i] = "";
                     }
                 }
-
 
                 for (int i = 0; i < 5; i++) {
                     PreparedStatement query = connection.prepareStatement("SELECT * FROM Heroes WHERE Name IN ('" + hero[i] + "')");
@@ -117,24 +115,16 @@ public class Controller {
                             att[j] = resultSet.getByte(j + 2);
                         }
                         champs[i] = new Champion(hero[5], att);
-
                     }
                 }
 
-
                 Team team = new Team(champs);
                 team.Calculate(connection, banList, results);
-                //WYSWIETLENIE WYSZUKANYCH BOHATEROW
                 textArea.setText("1. "+results[0] + "\n2. " + results[1] + "\n3. " + results[2]);
             }
-
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
 }
